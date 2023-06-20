@@ -1,0 +1,354 @@
+body {
+  display: flex;
+  justify-content: center;
+  padding: 10rem;
+  gap: 5rem;
+  font-size: 1.5rem;
+  font-family: "Poppins";
+}
+
+#map {
+  display: grid;
+  grid-template-columns: repeat(28, 80px);
+  grid-template-rows: repeat(28, 80px);
+  gap: 4px;
+}
+
+#divText {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.endpoint {
+  background-color: red;
+}
+
+.node {
+  background-color: #ccc;
+}
+
+.node.active {
+  /* background-color: transparent;
+      background-image: url('/assets/ambulance.png');
+      background-size: cover;
+      background-repeat: no-repeat; */
+  /* z-index: 100; */
+}
+
+.node.active::after {
+  content: "🚑";
+  font-size: 4.5rem;
+}
+
+.node.active2 {
+  /* background-color: transparent;
+      background-image: url('/assets/ambulance.png');
+      background-size: cover;
+      background-repeat: no-repeat; */
+  /* z-index: 100; */
+}
+
+.node.active2::after {
+  content: "🚒";
+  font-size: 4.5rem;
+}
+
+.path {
+  background-color: blue !important;
+}
+
+.path2 {
+  background-color: rgb(0, 238, 255) !important;
+}
+
+.node.yellow {
+  background-color: yellow;
+}
+
+.node.yellow::after {
+  content: "🏥";
+  font-size: 2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.predio {
+  background-color: green;
+}
+
+.node.predio::after {
+  content: "🏢";
+  font-size: 3.8rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.calçada {
+  background-color: black;
+}
+
+.node.calçada::after {
+  content: "|";
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.fonte {
+  background-color: rgb(0, 73, 0);
+}
+
+.node.fonte::after {
+  content: "⛲";
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.grama {
+  background-color: rgb(0, 73, 0);
+}
+
+.node.grama::after {
+  content: "🌳";
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.areia {
+  background-color: rgb(255, 223, 154);
+}
+
+.node.areia::after {
+  content: "";
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.areia2 {
+  background-color: rgb(255, 223, 154);
+  transition: 2s ease-in-out;
+  
+}
+
+/* .node.areia2::after {
+  content: "👫";
+  font-size: 3.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.node.areia3 {
+  background-color: rgb(255, 223, 154);
+}
+
+.node.areia3::after {
+  content: "🌴";
+  font-size: 3.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate2 5s infinite;
+}
+
+.node.areia4 {
+  background-color: rgb(255, 223, 154);
+}
+
+.node.areia4::after {
+  content: "👫";
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate 1.75s infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.node.mar {
+  background-color: rgb(35, 112, 255);
+}
+
+.node.mar::after {
+  content: "";
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.mar2 {
+  background-color: rgb(35, 112, 255);
+  transition: 2s ease-in-out;
+}
+
+.street {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.street::after {
+  content: "- - - -";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.both {
+  background-color: rgb(98, 55, 255);
+}
+
+.node.both::after {
+  background-color: blue;
+  content: "🚑";
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.node.both::before {
+  background-color: rgb(0, 238, 255);
+  content: "🚒";
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.nuvem {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  left: 20%;
+  z-index: 10;
+  animation: moving 14s infinite linear;
+}
+
+.nuvem::after {
+  content: "☁️";
+  font-size: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes moving {
+  0% {
+    transform: translate(1000px, 0)
+  }
+  50% {
+    transform: translate(-950px, 0)
+  }
+  100% {
+    transform: translate(1000px, 0)
+  }
+}
+
+.nuvem2 {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  left: 20%;
+  z-index: 10;
+  animation: moving 11s infinite linear;
+}
+
+.nuvem2::after {
+  content: "☁️";
+  font-size: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nuvem3 {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  left: 20%;
+  z-index: 10;
+  animation: moving 10s infinite linear;
+}
+
+.nuvem3::after {
+  content: "☁️";
+  font-size: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nuvem4 {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  left: 20%;
+  z-index: 10;
+  animation: moving 13s infinite linear;
+}
+
+.nuvem4::after {
+  content: "☁️";
+  font-size: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nuvem5 {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  left: 20%;
+  z-index: 10;
+  animation: moving 12s infinite linear;
+}
+
+.nuvem5::after {
+  content: "☁️";
+  font-size: 20rem;
+  display: flex;
+  justify-content: center;
+}
